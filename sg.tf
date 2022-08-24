@@ -17,7 +17,7 @@ data "aws_iam_policy_document" "s3_bucket_access" {
 
     actions = ["s3:GetObject"]
 
-    resources = ["${aws_s3_bucket.ssh_public_keys.arn}/${aws_s3_bucket_object.ssh_public_keys.key}"]
+    resources = ["${aws_s3_bucket.ssh_public_keys.arn}/${aws_s3_object.ssh_public_keys.key}"]
   }
 }
 

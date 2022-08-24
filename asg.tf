@@ -20,13 +20,11 @@ resource "aws_autoscaling_group" "bastion" {
     "GroupTotalInstances",
   ]
 
-  tags = [
-    {
-      "key"                 = "Name"
-      "value"               = var.name
-      "propagate_at_launch" = "true"
-    },
-  ]
+  tag {
+    key                 = "Name"
+    value               = var.name
+    propagate_at_launch = "true"
+  }
 
   instance_refresh {
     strategy = "Rolling"
